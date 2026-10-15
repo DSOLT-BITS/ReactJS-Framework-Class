@@ -13,6 +13,7 @@
 //
 // ============================================================
 
+
 // STEP 1: Import your section components
 // Each component lives in its own file inside ./components/
 // Use this syntax:  import ComponentName from "./components/ComponentName";
@@ -30,6 +31,7 @@
 
 /* --- YOUR IMPORTS GO HERE --- */
 
+import HeroSection from "./components/HeroSection";
 
 // STEP 2: Create and export the App component
 // Use: export default function App() { ... }
@@ -54,3 +56,48 @@
 // for the navigation links in the NavBar.
 
 /* --- YOUR COMPONENT CODE GOES HERE --- */
+
+export default function App() {
+
+  return (
+   <div className="app">
+    <section className="hero bg-hero">
+      <div className="hero-grid">
+            <HeroSection />
+      </div>
+    </section>
+
+    {/* Features / Carousel Section */}
+    <section className="features bg-features" id="shop">
+    
+    </section>
+
+    {/* Product Showcase Section */}
+    <section className="bg-cta">
+    
+    </section>
+
+    {/* CTA *Call to Action Section* */}
+    <section className="bg-cta">
+
+    </section>
+
+    {/* About Section */}
+    <section className="bg-cta" id="about">
+
+    </section>
+
+    {/* Contact Section */}
+    <section className="bg-cta" id="contact">
+
+    </section>
+
+    {/* Footer Section */}
+    <section className="bg-footer">
+
+    </section>
+    
+  </div>
+
+  )
+}
