@@ -32,6 +32,7 @@
 /* --- YOUR IMPORTS GO HERE --- */
 
 import HeroSection from "./components/HeroSection";
+import FooterSection from "./components/FooterSection";
 
 // STEP 2: Create and export the App component
 // Use: export default function App() { ... }
@@ -94,7 +95,7 @@ export default function App() {
 
     {/* Footer Section */}
     <section className="bg-footer">
-
+      <FooterSection />
     </section>
     
   </div>
