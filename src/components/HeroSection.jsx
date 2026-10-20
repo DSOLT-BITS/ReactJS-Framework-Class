@@ -89,7 +89,6 @@ import Badge from "./ui/Badge";
 
 /* --- YOUR COMPONENT CODE GOES HERE --- */
 
-
 //Animation states for the headline container -- stagger children which delays each word by 0.12s so they appear one after another
 const textVariants = {
   hidden: {},

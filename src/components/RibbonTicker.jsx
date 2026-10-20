@@ -10,7 +10,7 @@
 // - Spreading arrays to duplicate content: [...arr, ...arr]
 // - Rendering lists with .map()
 // - The key prop and why React needs it
-// - CSS animations (the scroll is done in CSS, not JS)
+// - Framer Motion animations for the ticker and hover interactions
 // - Using framer-motion's whileHover for micro-interactions
 //
 // CONCEPTS COVERED:
@@ -23,6 +23,8 @@
 // STEP 1: Import motion from "framer-motion"
 
 /* --- YOUR IMPORTS GO HERE --- */
+import { motion } from "framer-motion";
+
 
 
 // STEP 2: Create and export the RibbonTicker component
@@ -62,7 +64,54 @@
 //     </div>
 //   </div>
 //
-// NOTE: The scrolling animation is handled by CSS in index.css
-// Look for the @keyframes ribbon-scroll rule.
+// NOTE: The scrolling animation is controlled by the Framer Motion
+// animate and transition props on the ribbon track.
 
 /* --- YOUR COMPONENT CODE GOES HERE --- */
+
+export default function RibbonTicker() {
+    const blends = [
+        "Jamaican Blue Mountain",
+        "Yirgacheffe",
+        "Tanzania Peaberry",
+        "Panama Geisha",
+        "Vietnamese Robusta",
+        "Brazilian Santos",
+        "Costa Rica Tarrazu",
+        "Guatemala Antigua",
+        "Kenya AA",
+        "Sumatra Mandheling",
+        "Kona",
+        "Colombian Supremo",
+        "Ethiopian Harrar",
+        "Arabian Mocha",
+        "Red Sulawesi"
+    ];
+
+    const items = [...blends, ...blends];
+
+    return (
+        <div className="ribbon-ticker-container">
+            <div className="ribbon-ticker">
+                <motion.div 
+                className="ribbon-track"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ repeat: Infinity, duration: 200, ease: "linear" }}
+                >
+                    
+                    {items.map((name, i) => {
+                        return (
+                            <motion.span
+                                key={i}
+                                className="ribbon-item"
+                                whileHover={{ scale: 1.1, color: "#f0b955" }}
+                                transition={{ type: "spring", stiffness: 300 }}>
+                                {name} <span className="ribbon-dot">✦</span>
+                            </motion.span>
+                        );
+                    })}
+                </motion.div>
+            </div>
+        </div>
+    );
+}

@@ -87,6 +87,7 @@ import logo from "../assets/Beans_logo.png"
 //       - Copyright line using {currentYear}
  
 /* --- YOUR COMPONENT CODE GOES HERE --- */
+
 // all footer link data in one object, looped into lists below
 const navigation = {
     shop: [

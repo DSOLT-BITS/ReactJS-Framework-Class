@@ -1272,7 +1272,6 @@ a {
 .ribbon-track {
     display: flex;
     width: max-content;
-    animation: ribbon-scroll 35s linear infinite;
 }
 
 .ribbon-ticker-container {
@@ -1295,15 +1294,6 @@ a {
 .ribbon-dot {
     color: var(--amber);
     margin-left: 28px;
-}
-
-@keyframes ribbon-scroll {
-    0% {
-        transform: translate(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
 }
 
 /* ═══════════ Animations ═══════════ */
